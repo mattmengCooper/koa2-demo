@@ -1,0 +1,22 @@
+{
+  "name": "koa2demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "koa": "^2.4.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-generic-session": "^2.0.1",
+    "koa-redis": "^3.1.1",
+    "koa-router": "^7.3.0",
+    "koa-session": "^5.7.1",
+    "koa-static": "^4.0.2",
+    "koa-views": "^6.1.3"
+  }
+}
