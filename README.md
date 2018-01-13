@@ -10,7 +10,6 @@
 
     package.json
 
-    入口文件 app.js (node app.js 启动项目)
 2.中间件开发
 
     // ./middleware/logger-generator.js
@@ -24,6 +23,11 @@
             await next();
         }
     };
+    // ./app.js
+
+    const loggerGenerator = require('./middleware/logger-generator');
+
+    app.use(loggerGenerator());
 
 3.路由、路由中间件
 
@@ -88,7 +92,13 @@
 
 >使用路由中间件 koa-router
 
+>安装
+
+    npm install koa-router --save
+
 >./router/index.js
+
+
 
     const Router = require('koa-router');
 
@@ -133,13 +143,19 @@
 
     koa2未提供自带的post数据的处理 需要中间件
 
+>安装
+    npm install koa-bodyparser --save
+
 >koa-bodyparser
 
     上下文 ctx.request.body 获取
 
-5.静态资源
 
-    koa-static
+5.静态资源
+>安装
+
+    npm install koa-static --save
+
 
     const static = require('koa-static');
     const path = require('path');
@@ -163,8 +179,14 @@
 
         1.如果session数据量很小，可以直接存在内存中
         2.如果session数据量很大，则需要存储介质存放session数据
+>安装
 
-    使用redis存储
+    npm install koa-session --save
+    npm install koa-redis --save
+
+>使用redis存储
+
+
         const session = require('koa-session');
         const redisStore = require('koa-redis');
 
@@ -185,6 +207,8 @@
             ctx.session
 
 7.模板引擎（ejs）
+>安装
+
     npm install --save ejs
     npm install --save koa-views
 
@@ -215,10 +239,11 @@
 
 8.路径访问跨域
 
-
-    const cors = require('koa-cors');
 [cors使用文档](https://www.npmjs.com/package/koa-cors)
 
 8.数据库（mongodb）
 
 [mongodb使用文档](https://www.npmjs.com/package/mongodb)
+
+[博客地址]()
+
